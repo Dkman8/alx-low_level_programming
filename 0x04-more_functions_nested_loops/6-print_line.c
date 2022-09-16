@@ -2,9 +2,9 @@
 #include "main.h"
 
 /**
- * print_diagonal - prints a diagonal
+ * print_line - prints a straight line
  * @n: parameter
- * Return: returns nothing
+ * Return:returns nothing
  */
 
 void print_line(int n)
