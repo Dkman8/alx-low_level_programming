@@ -1,26 +1,36 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 #include "main.h"
 
 /**
- * main - entry point
- * Return: generated password
+ * rev_string - Reverses a string
+ * @s: string to be reversed
+ * Return: nothing
  */
 
-int main(void)
+void rev_string(char *s)
 {
-	char c;
-	int x;
+	int i, tmp, len = _strlen(s);
 
-	srand(time(0));
-	while (x <= 2645)
+	for (i = 0; i < len / 2; i++)
 	{
-		c = rand() % 128;
-		x += c;
-		putchar(c);
+		tmp = *(s + i);
+		*(s + i) = *(s + len - i - 1);
+		*(s + len - i - 1) = tmp;
 	}
-		putchar(2772 - x);
+}
 
-		return (0);
+/**
+ * _strlen - returns the length of a string
+ * @s: string
+ * Return: the length of the given string
+ */
+
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*(s + len) != '\0')
+		len++;
+
+	return (len);
 }
