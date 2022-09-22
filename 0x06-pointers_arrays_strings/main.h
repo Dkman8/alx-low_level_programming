@@ -8,7 +8,7 @@
 
  * File: main.h                                                                                                                    
 
- * Auth: sam tech(Samuel birhanu)                                                                                                             
+ * Auth: sam tech(hailu hulentaw)                                                                                                             
 
  * Desc: Header file containing prototypes for all functions                                                                            
 
