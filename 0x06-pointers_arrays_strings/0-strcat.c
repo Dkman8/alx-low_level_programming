@@ -1,45 +1,22 @@
 #include "main.h"
 
 /**
- * rot13 - Encodes a string using rot13.
- *
- * Return: A pointer to the encoded string.
+ * strcat - Concatenates the string pointed to by @src, including the x  
+ *          null byte, to the end of the string pointed to by @dest.
+ * @dest: A pointer to the string to be concatenated upon.
+ * @src: The source string to be appended to @dest. 
+ * Return: A pointer to the destination string @dest
  */
-char *rot13(char *str)
+
+char *_strcat(char *dest, const char *src) 
 {
-	int indx1 = 0, indx2;
-	char alphabet[52] = {'A', 'B', 'C', 'D', 'E', 'F',
-		'G', 'H', 'I', 'J', 'K', 'L',
-		'M', 'N', 'O', 'P', 'Q', 'R',
-		'S', 'T', 'U', 'V', 'W', 'X',
-		'Y', 'Z', 'a', 'b', 'c', 'd',
-		'e', 'f', 'g', 'h', 'i', 'j',
-		'k', 'l', 'm', 'n', 'o', 'p',
-		'q', 'r', 's', 't', 'u', 'v',
-		'w', 'x', 'y', 'z'};
-	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R', 'S',
-		'T', 'U', 'V', 'W', 'X', 'Y',
-		'Z', 'A', 'B', 'C', 'D', 'E',
-		'F', 'G', 'H', 'I', 'J', 'K',
-		'L', 'M', 'n', 'o', 'p', 'q',
-		'r', 's', 't', 'u', 'v', 'w',
-		'x', 'y', 'z', 'a', 'b', 'c',
-		'd', 'e', 'f', 'g', 'h', 'i',
-		'j', 'k', 'l', 'm'};
+	 int index = 0, dest_len = 0; 
 
-	while (str[indx1])
-	{
-		for (indx2 = 0; indx2 < 52; indx2++)
-		{
-			if (str[indx1] == alphabet[indx2])
-			{
-				str[indx1] = rot13key[indx2];
-				break;
-			}
-		}
+	  while (dest[index++]) 
+		  dest_len++; 
 
-		indx1++;
-	}
+	   for (index = 0; src[index]; index++) 
+		   dest[dest_len++] = src[index];
 
-	return (str);
+	   return (dest); 
 }
